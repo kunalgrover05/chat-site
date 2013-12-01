@@ -1,37 +1,95 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html> 
+<head> 
  <title>IITM Chat</title>
-    <meta name="description" content="Chat system with private messages">
+    <meta name="description" content="Chat site">
     <link type="text/css" rel="stylesheet" href="./css/style.css" media="screen">
+      <link rel="stylesheet" href="./css/jquery-ui.css" />
+    <link type="text/css" rel="stylesheet" href="./css/jquery.cssemoticons.css" media="screen">
+
+     <link type="text/css" rel="stylesheet" href="./css/font-awesome.css" media="screen">
+     
+    
 </head>
-<body>
-    <div id="wrapper">
-        <h1>Chat</h1>
+<body style="margin:0px">
+    
+    <div class="blackout">
 
-        <div id="Chat">
-            <div class="info">
-                <div id="status" style="color:#A9A9A9">Connecting...</style></div>
-                <div id="nick"></div>
-                <div id="online">There are <span id="total">0</span> users online.</div>
-            </div>
-            <div id="logs">
-                <div id="messages"><ul></ul></div>
-                <div id="users"><ul></ul></div>
-            </div>
-            <div class="controls">
-                <input type="text" id="chatInput" name="chatInput1" maxlength="255" value="" />
-                <div id="talkto">
-                    You are talking to: <strong><span id="selected">broadcast</span></strong>
-                    <a id="broadcast" href="#" title="Talk to everyone">broadcast</a>
-                </div>
-            </div>
+    </div>
+    <div class="msgbox">
+        <div class="msgHead"><center>Welcome to IITM Chat</style></center></div>
+        <div class="labels">Enter your name to continue</div>
+        <input class="forminput" id="entername">
+        
+        <a href="#"><div id="enter" class="btn1" onclick=gotofunc();>Take me in</div></a>
+        <div id="alerts" class="alerts">
+            <strong><center>Please enter your name to continue</center></strong>
         </div>
+        <div id="alerts2" class="alerts">
+            <strong><center>Sorry can't have special characters or numbers</center></strong>
+        </div>
+        
+
+    </div>
+
+  <div id ="mainwrapper">
+    <div id ="header_wrapper">
+
+        <br>
+        <span id="header"><center>IITM Chat</center></span>
+        <div id="alerts3" class="alerts">
+            <strong><center>Sorry username already taken</center></strong>
+        </div>
+        <div id="alerts4" class="alerts">
+            <strong><center>Something went wrong...Reloading page...</center></strong>
+        </div>
+        <div class="panel">
+                <div id="conn_status" >
+                    <i class="icon-spinner icon-spin icon-large"></i>Connecting...</style>
+                </div>
+                <div id="nick"></div>
+                <div id="online"><span id="total">0</style></span> users online.</div>
+                
+         </div> 
+         <div class="buttons">
+             <a href="#"><div class = "btn2" id="togglechat" onclick=toggle()>Show/hide group chat</div></a>
+             <a href="#"><div class = "btn2" id="togglechat" onclick=logOut()>Logout</div></a>
+         </div>  
+    </div>
+    <div id="wrapper" class="container">
+        <div id="talkto" class="container">
+                    Talking to: <strong><span id="selected">broadcast</span></strong>
+        </div>
+        <div id="MainChat" class="container">
+            <div id="messages"><ul></ul></div>
+                
+            <input type="text" id="chatInput" maxlength="255" value="" />
+        </div>
+        
+        <div  id="chatarea">
+        </div>
+    </div>
+    <div id="users">
+        <div class="ui-widget">
+            <input type="text" style="margin-top:10px; margin-bottom:5px;margin-left:30px;margin-right:auto" id="usersearch"  />
+        </div>
+        <div id="userlist">
+            <ul></ul>
+        </div>
+    </div>
 
 
-<script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+    <div class="footer"><center>Made by Kunal Grover<br>Contact at kunalgrover05@gmail.com for bugs or suggestions</center>
+    </div>
+  </div>
+    
+
+    <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./js/mine.js" ></script>
+    <script type="text/javascript" src="./js/login.js"></script>
     <script type="text/javascript" src="./socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="./js/support-chat.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="./js/chat-main.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/linkify.js"></script>
+ 
 </body>
 </html>
